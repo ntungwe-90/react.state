@@ -2,8 +2,8 @@ import React from "react";
 import "./App.css";
 import UserItem from './components/UserItem';
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state={
       name: "",
@@ -26,7 +26,10 @@ class App extends React.Component {
   handleSubmit(i){
     i.preventDefault();
     let newUser={name:this.state.name,email:this.state.email};
-    this.setState({users: [...this.state.users, newUser]});
+    this.setState({users: [...this.state.users, newUser],
+      name:"",
+      email:""
+    });
   }
   
 
